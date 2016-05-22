@@ -34,7 +34,7 @@ public class TelaPrincipal extends JFrame {
 	 */
 	public TelaPrincipal() {
 		setMinimumSize(new Dimension(1024, 720));
-		setTitle("Projeto de processamento de imagem");
+		setTitle("Projeto de Multimidia");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1024, 720);
