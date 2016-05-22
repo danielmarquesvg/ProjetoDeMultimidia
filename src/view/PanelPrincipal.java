@@ -58,6 +58,11 @@ public class PanelPrincipal extends JPanel {
 		botaoMediana.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				PanelMediana panelMediana = new PanelMediana();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelMediana);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
 				
 			}
 		});
