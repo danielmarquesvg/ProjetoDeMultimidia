@@ -154,6 +154,18 @@ public class PanelPrincipal extends JPanel {
 		add(botaoNegativo);
 		
 		JButton botaoGamma = new JButton("Gamma");
+		botaoGamma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				
+				PanelGamma panelGamma = new PanelGamma();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelGamma);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
+			}
+		});
 		botaoGamma.setForeground(Color.WHITE);
 		botaoGamma.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		botaoGamma.setBackground(new Color(0, 102, 255));
