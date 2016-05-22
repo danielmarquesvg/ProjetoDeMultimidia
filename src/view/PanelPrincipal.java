@@ -127,6 +127,17 @@ public class PanelPrincipal extends JPanel {
 		add(botaoRoberts);
 		
 		JButton botaoRobertsCruzado = new JButton("Roberts Cruzado");
+		botaoRobertsCruzado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				PanelRobertsCruzado panelRobertsCruzado = new PanelRobertsCruzado();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelRobertsCruzado);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
+			}
+		});
 		botaoRobertsCruzado.setForeground(Color.WHITE);
 		botaoRobertsCruzado.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		botaoRobertsCruzado.setBackground(new Color(0, 102, 255));
