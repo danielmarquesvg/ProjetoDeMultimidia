@@ -75,6 +75,12 @@ public class PanelPrincipal extends JPanel {
 		JButton botaoPassaAlta = new JButton("Passa Alta");
 		botaoPassaAlta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent eventoDeMouse) {
+				
+				PanelPassaAlta panelPassaAlta = new PanelPassaAlta();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelPassaAlta);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
 
 			}
 		});
