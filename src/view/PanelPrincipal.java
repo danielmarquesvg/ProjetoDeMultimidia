@@ -52,13 +52,6 @@ public class PanelPrincipal extends JPanel {
 		botaoMediana.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				/*
-				TelaFiltros telaFiltros = new TelaFiltros();
-				TelaInicial.contentPane.removeAll();
-				TelaInicial.contentPane.add(telaFiltros);
-				TelaInicial.contentPane.validate();
-				TelaInicial.contentPane.repaint();
-				*/
 				
 			}
 		});
@@ -185,6 +178,17 @@ public class PanelPrincipal extends JPanel {
 		add(botaoGamma);
 		
 		JButton botaoLogaritmo = new JButton("Logaritmo");
+		botaoLogaritmo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				PanelLogaritmo panelLogaritmo = new PanelLogaritmo();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelLogaritmo);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
+			}
+		});
 		botaoLogaritmo.setForeground(Color.WHITE);
 		botaoLogaritmo.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		botaoLogaritmo.setBackground(new Color(0, 102, 255));
