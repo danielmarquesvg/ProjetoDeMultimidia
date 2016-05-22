@@ -93,6 +93,13 @@ public class PanelPrincipal extends JPanel {
 		JButton botaoPrewitt = new JButton("Prewitt");
 		botaoPrewitt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				PanelPrewitt PanelPrewitt = new PanelPrewitt();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(PanelPrewitt);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
 			}
 		});
 		botaoPrewitt.setForeground(Color.WHITE);
