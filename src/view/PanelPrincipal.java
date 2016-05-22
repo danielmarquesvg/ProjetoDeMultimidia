@@ -175,6 +175,17 @@ public class PanelPrincipal extends JPanel {
 		add(separator_2);
 		
 		JButton botaoSobel = new JButton("Sobel");
+		botaoSobel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				PanelSobel panelSobel = new PanelSobel();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelSobel);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
+			}
+		});
 		botaoSobel.setForeground(Color.WHITE);
 		botaoSobel.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		botaoSobel.setBackground(new Color(0, 102, 255));
