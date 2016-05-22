@@ -147,6 +147,18 @@ public class PanelPrincipal extends JPanel {
 		add(botaoSobel);
 		
 		JButton botaoNegativo = new JButton("Negativo");
+		botaoNegativo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				PanelNegativo panelNegativo = new PanelNegativo();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelNegativo);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
+				
+			}
+		});
 		botaoNegativo.setForeground(Color.WHITE);
 		botaoNegativo.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		botaoNegativo.setBackground(new Color(0, 102, 255));
