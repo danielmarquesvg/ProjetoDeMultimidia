@@ -40,6 +40,12 @@ public class PanelPrincipal extends JPanel {
 		botaoMedia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent eventoDeMouse) {
 				
+				PanelMedia panelMedia = new PanelMedia();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelMedia);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
 			}
 		});
 		botaoMedia.setForeground(Color.WHITE);
