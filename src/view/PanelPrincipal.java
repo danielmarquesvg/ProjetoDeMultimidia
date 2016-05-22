@@ -196,6 +196,17 @@ public class PanelPrincipal extends JPanel {
 		add(botaoLogaritmo);
 		
 		JButton botaoEqualizar = new JButton("Equalizar");
+		botaoEqualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				PanelEqualizar panelEqualizar = new PanelEqualizar();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelEqualizar);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
+			}
+		});
 		botaoEqualizar.setForeground(Color.WHITE);
 		botaoEqualizar.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		botaoEqualizar.setBackground(new Color(0, 102, 255));
