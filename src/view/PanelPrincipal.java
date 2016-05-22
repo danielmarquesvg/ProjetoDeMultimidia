@@ -111,6 +111,13 @@ public class PanelPrincipal extends JPanel {
 		JButton botaoRoberts = new JButton("Roberts");
 		botaoRoberts.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				PanelRoberts panelRoberts = new PanelRoberts();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelRoberts);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+				
 			}
 		});
 		botaoRoberts.setForeground(Color.WHITE);
