@@ -28,25 +28,6 @@ public class PanelMediana extends JPanel {
 		setLayout(null);
 		setVisible(true);
 
-		// Painel lateral
-		
-
-		// INICIO PANEL SUPERIOR
-
-		JPanel panelSuperior = new JPanel();
-		panelSuperior.setBackground(SystemColor.windowBorder);
-		panelSuperior.setBounds(194, 0, 830, 102);
-		add(panelSuperior);
-		panelSuperior.setLayout(null);
-
-		// Corpo do sistema
-		JLabel labelFiltroMediana = new JLabel("Filtros > Mediana");
-		labelFiltroMediana.setForeground(Color.WHITE);
-		labelFiltroMediana.setFont(new Font("Segoe UI Semilight", Font.PLAIN,
-				24));
-		labelFiltroMediana.setBounds(10, 24, 730, 55);
-		panelSuperior.add(labelFiltroMediana);
-
 		panelDaImagem1 = new PanelDaImagem();
 		panelDaImagem1.setBounds(204, 113, 250, 250);
 		add(panelDaImagem1);
@@ -105,6 +86,45 @@ public class PanelMediana extends JPanel {
 		botaoMediana.setBackground(new Color(0, 102, 255));
 		botaoMediana.setBounds(204, 410, 250, 250);
 		add(botaoMediana);
+		
+		JPanel panelSuperior = new JPanel();
+		panelSuperior.setLayout(null);
+		panelSuperior.setBackground(new Color(0, 153, 204));
+		panelSuperior.setBounds(0, 0, 1024, 42);
+		add(panelSuperior);
+		
+		JLabel labelTitulo = new JLabel("Filtro da Media");
+		labelTitulo.setForeground(Color.WHITE);
+		labelTitulo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelTitulo.setBounds(10, 11, 273, 27);
+		panelSuperior.add(labelTitulo);
+		
+		ImageIcon imageIcon = new ImageIcon(PanelPrincipal.class.getResource("/imagens/homeIcon.png"));
+		int scale = 2; // 2 times smaller
+		int width = imageIcon.getIconWidth();
+		int newWidth = width / scale;
+		
+		JButton botaoPaginaInicial = new JButton("Página Inicial");
+		botaoPaginaInicial.setForeground(Color.WHITE);
+		botaoPaginaInicial.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoPaginaInicial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
+
+				PanelPrincipal panelPrincipal = new PanelPrincipal();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelPrincipal);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+
+			}
+		});
+		botaoPaginaInicial.setBounds(794, 11, 204, 27);
+		panelSuperior.add(botaoPaginaInicial);
+		botaoPaginaInicial.setIcon(new ImageIcon(imageIcon.getImage().getScaledInstance(newWidth, -1, java.awt.Image.SCALE_SMOOTH)));
+		botaoPaginaInicial.setOpaque(false);
+		botaoPaginaInicial.setContentAreaFilled(false);
+		botaoPaginaInicial.setBorderPainted(true);
+
 
 	}
 

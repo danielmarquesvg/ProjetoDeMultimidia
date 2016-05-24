@@ -36,30 +36,6 @@ public class PanelEqualizar extends JPanel {
 		setLayout(null);
 		setVisible(true);
 
-		// Painel lateral
-		JPanel panelOpcaoLateral = new JPanel();
-		panelOpcaoLateral.setBackground(SystemColor.scrollbar);
-		panelOpcaoLateral.setBounds(0, 0, 194, 720);
-		add(panelOpcaoLateral);
-		panelOpcaoLateral.setLayout(null);
-
-		
-		// INICIO PANEL SUPERIOR
-
-		JPanel panelSuperior = new JPanel();
-		panelSuperior.setBackground(SystemColor.windowBorder);
-		panelSuperior.setBounds(194, 0, 830, 102);
-		add(panelSuperior);
-		panelSuperior.setLayout(null);
-
-		// Corpo do sistema
-		JLabel labelEqualizarImagem = new JLabel("Equalizar Imagem");
-		labelEqualizarImagem.setForeground(Color.WHITE);
-		labelEqualizarImagem.setFont(new Font("Segoe UI Semilight", Font.PLAIN,
-				24));
-		labelEqualizarImagem.setBounds(10, 24, 730, 55);
-		panelSuperior.add(labelEqualizarImagem);
-
 		PanelDaImagem panelDaImagem1 = new PanelDaImagem();
 		panelDaImagem1.setLocation(221, 135);
 		add(panelDaImagem1);
@@ -126,6 +102,44 @@ public class PanelEqualizar extends JPanel {
 		btnEscolherImagem.setFont(new Font("Segoe UI Light", Font.BOLD, 14));
 		btnEscolherImagem.setBounds(221, 385, 250, 35);
 		add(btnEscolherImagem);
+		
+		JPanel panelSuperior = new JPanel();
+		panelSuperior.setLayout(null);
+		panelSuperior.setBackground(new Color(0, 153, 204));
+		panelSuperior.setBounds(0, 0, 1024, 42);
+		add(panelSuperior);
+		
+		JLabel labelTitulo = new JLabel("Filtro da Media");
+		labelTitulo.setForeground(Color.WHITE);
+		labelTitulo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelTitulo.setBounds(10, 11, 273, 27);
+		panelSuperior.add(labelTitulo);
+		
+		ImageIcon imageIcon = new ImageIcon(PanelPrincipal.class.getResource("/imagens/homeIcon.png"));
+		int scale = 2; // 2 times smaller
+		int width = imageIcon.getIconWidth();
+		int newWidth = width / scale;
+		
+		JButton botaoPaginaInicial = new JButton("Página Inicial");
+		botaoPaginaInicial.setForeground(Color.WHITE);
+		botaoPaginaInicial.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoPaginaInicial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
+
+				PanelPrincipal panelPrincipal = new PanelPrincipal();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelPrincipal);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+
+			}
+		});
+		botaoPaginaInicial.setBounds(794, 11, 204, 27);
+		panelSuperior.add(botaoPaginaInicial);
+		botaoPaginaInicial.setIcon(new ImageIcon(imageIcon.getImage().getScaledInstance(newWidth, -1, java.awt.Image.SCALE_SMOOTH)));
+		botaoPaginaInicial.setOpaque(false);
+		botaoPaginaInicial.setContentAreaFilled(false);
+		botaoPaginaInicial.setBorderPainted(true);
 
 	}
 
@@ -135,5 +149,7 @@ public class PanelEqualizar extends JPanel {
 		super.paintComponent(g);
 		g.drawImage((Image) imagemOriginal, 0, 0, null);
 	}
+	
+	
 
 }

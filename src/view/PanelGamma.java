@@ -115,17 +115,43 @@ public class PanelGamma extends JPanel {
 		labelC.setBounds(491, 113, 194, 35);
 		add(labelC);
 		
-		JPanel panel = new JPanel();
-		panel.setLayout(null);
-		panel.setBackground(new Color(0, 153, 204));
-		panel.setBounds(0, 0, 1024, 42);
-		add(panel);
+		JPanel panelSuperior = new JPanel();
+		panelSuperior.setLayout(null);
+		panelSuperior.setBackground(new Color(0, 153, 204));
+		panelSuperior.setBounds(0, 0, 1024, 42);
+		add(panelSuperior);
 		
-		JLabel labelTituloGamma = new JLabel("Gamma");
-		labelTituloGamma.setForeground(Color.WHITE);
-		labelTituloGamma.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
-		labelTituloGamma.setBounds(10, 11, 273, 27);
-		panel.add(labelTituloGamma);
+		JLabel labelTitulo = new JLabel("Filtro da Media");
+		labelTitulo.setForeground(Color.WHITE);
+		labelTitulo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelTitulo.setBounds(10, 11, 273, 27);
+		panelSuperior.add(labelTitulo);
+		
+		ImageIcon imageIcon = new ImageIcon(PanelPrincipal.class.getResource("/imagens/homeIcon.png"));
+		int scale = 2; // 2 times smaller
+		int width = imageIcon.getIconWidth();
+		int newWidth = width / scale;
+		
+		JButton botaoPaginaInicial = new JButton("Página Inicial");
+		botaoPaginaInicial.setForeground(Color.WHITE);
+		botaoPaginaInicial.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoPaginaInicial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
+
+				PanelPrincipal panelPrincipal = new PanelPrincipal();
+				TelaPrincipal.contentPane.removeAll();
+				TelaPrincipal.contentPane.add(panelPrincipal);
+				TelaPrincipal.contentPane.validate();
+				TelaPrincipal.contentPane.repaint();
+
+			}
+		});
+		botaoPaginaInicial.setBounds(794, 11, 204, 27);
+		panelSuperior.add(botaoPaginaInicial);
+		botaoPaginaInicial.setIcon(new ImageIcon(imageIcon.getImage().getScaledInstance(newWidth, -1, java.awt.Image.SCALE_SMOOTH)));
+		botaoPaginaInicial.setOpaque(false);
+		botaoPaginaInicial.setContentAreaFilled(false);
+		botaoPaginaInicial.setBorderPainted(true);
 
 	}
 }
